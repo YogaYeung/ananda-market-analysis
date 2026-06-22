@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ANANDALAM 藏地美学出海 · 市场与竞品深度报告 · 2026-06</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Noto+Serif+SC:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --rust:#B4502E; --terra:#C8694A; --ochre:#C2922E; --gold:#D8A843;
+  --indigo:#23303F; --ink:#2A2420; --cream:#F8F2E7; --sand:#EFE5D3;
+  --deepred:#8C2F2A; --sage:#79866F; --teal:#3E6B6A;
+  --text:#2A2420; --text2:#5b5147; --textm:#988b7c;
+  --bg:#F8F2E7; --white:#fffdf8; --border:#e6dcc8;
+  --shadow:0 4px 22px rgba(42,36,32,.09);
+  --shadow-lg:0 12px 40px rgba(42,36,32,.14);
+  --r:16px; --font:'Plus Jakarta Sans','Noto Sans SC',sans-serif;
+  --serif:'Cormorant Garamond','Noto Serif SC',serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:var(--font);font-size:15px;line-height:1.85;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased}
+a{color:var(--rust);text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+
+/* Cover */
+.cover{min-height:480px;background:linear-gradient(150deg,#1a2530 0%,#23303F 45%,#3a3026 100%);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:4rem 2rem}
+.blob{position:absolute;border-radius:50%;opacity:.20;filter:blur(2px)}
+.b1{width:420px;height:420px;background:var(--terra);top:-120px;right:-90px;animation:f1 10s ease-in-out infinite}
+.b2{width:300px;height:300px;background:var(--gold);bottom:-90px;left:-50px;animation:f2 12s ease-in-out infinite}
+.b3{width:220px;height:220px;background:var(--deepred);top:30%;left:8%;animation:f3 14s ease-in-out infinite}
+.b4{width:160px;height:160px;background:var(--teal);bottom:22%;right:16%;animation:f1 11s ease-in-out infinite reverse}
+@keyframes f1{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-28px,20px) scale(1.08)}}
+@keyframes f2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(24px,-20px) scale(1.06)}}
+@keyframes f3{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(30px,14px) scale(1.12)}}
+.cover-inner{position:relative;z-index:2;text-align:center;color:#fff;max-width:820px;margin:0 auto}
+.cover-badge{font-size:11px;font-weight:700;letter-spacing:3px;color:var(--gold);border:1.5px solid rgba(216,168,67,.5);padding:5px 20px;border-radius:99px;margin-bottom:1.6rem;display:inline-block;background:rgba(216,168,67,.1)}
+.cover h1{font-family:var(--serif);font-size:54px;font-weight:700;line-height:1.12;margin-bottom:.5rem;letter-spacing:.5px}
+.cover h1 em{color:var(--gold);font-style:italic}
+.cover-zh{font-size:21px;font-weight:600;color:#fff;margin-bottom:1rem;font-family:'Noto Serif SC',serif}
+.cover-sub{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:2rem;line-height:1.7}
+.cover-stats{display:flex;gap:38px;justify-content:center;flex-wrap:wrap;margin-top:1.5rem}
+.cstat{text-align:center}
+.cstat-num{font-size:30px;font-weight:800;color:var(--gold);font-family:var(--serif)}
+.cstat-label{font-size:11px;color:rgba(255,255,255,.5);margin-top:2px;letter-spacing:.5px}
+
+/* Layout */
+.body{max-width:1000px;margin:0 auto;padding:3rem 1.5rem 5rem}
+.lead{font-size:16px;color:var(--text2);margin-bottom:1.4rem}
+
+/* Section heading */
+.section-title{font-family:var(--serif);font-size:30px;font-weight:700;color:var(--indigo);margin:3.4rem 0 .4rem;display:flex;align-items:center;gap:.7rem}
+.section-title .num{font-size:15px;font-weight:800;color:#fff;background:var(--rust);width:34px;height:34px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:var(--font);flex-shrink:0}
+.section-sub{font-size:14px;color:var(--textm);margin:0 0 1.6rem 2.9rem;letter-spacing:.5px}
+.divider{height:2px;background:linear-gradient(90deg,var(--rust),var(--gold),transparent);border:0;margin:.6rem 0 1.8rem}
+
+/* Cards */
+.card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:26px;margin-bottom:18px;box-shadow:var(--shadow)}
+.card h3{font-size:18px;font-weight:800;color:var(--indigo);margin-bottom:.5rem}
+
+/* TLDR */
+.tldr{background:linear-gradient(135deg,#fff8ec,#fdf1dd);border:1px solid var(--gold);border-left:6px solid var(--rust);border-radius:var(--r);padding:26px 28px;margin-bottom:2rem}
+.tldr h3{font-size:15px;font-weight:800;color:var(--rust);letter-spacing:1px;margin-bottom:1rem}
+.tldr ul{list-style:none}
+.tldr li{padding:8px 0 8px 30px;position:relative;font-size:15px;border-bottom:1px dashed var(--border)}
+.tldr li:last-child{border-bottom:0}
+.tldr li::before{content:'';position:absolute;left:6px;top:18px;width:9px;height:9px;background:var(--gold);border-radius:50%}
+.tldr li b{color:var(--rust)}
+
+/* stat strip */
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:1.4rem 0}
+.statbox{background:var(--white);border:1px solid var(--border);border-radius:14px;padding:18px 14px;text-align:center;box-shadow:var(--shadow)}
+.statbox .n{font-family:var(--serif);font-size:27px;font-weight:700;color:var(--rust)}
+.statbox .l{font-size:11.5px;color:var(--text2);margin-top:3px;line-height:1.4}
+
+/* brand card */
+.brand{background:var(--white);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:26px;box-shadow:var(--shadow)}
+.brand-shot{width:100%;border-bottom:1px solid var(--border);background:#1a2530}
+.brand-shot img{width:100%}
+.brand-cap{font-size:11.5px;color:var(--textm);padding:7px 18px;background:var(--sand);border-bottom:1px solid var(--border);font-style:italic}
+.brand-body{padding:24px 26px}
+.brand-head{display:flex;align-items:baseline;gap:.8rem;flex-wrap:wrap;margin-bottom:.3rem}
+.brand-head h3{font-family:var(--serif);font-size:26px;font-weight:700;color:var(--indigo)}
+.brand-tag{font-size:11px;font-weight:700;color:#fff;background:var(--rust);padding:3px 11px;border-radius:99px;letter-spacing:.5px}
+.brand-tag.star{background:linear-gradient(135deg,var(--gold),var(--ochre))}
+.brand-role{font-size:13.5px;color:var(--terra);font-weight:600;margin-bottom:1rem}
+.kv{display:grid;grid-template-columns:90px 1fr;gap:6px 14px;font-size:14px;margin-bottom:1rem}
+.kv dt{color:var(--textm);font-weight:600}
+.kv dd{color:var(--text)}
+.takeaway{background:linear-gradient(135deg,#f3f6f1,#eef3ec);border-left:4px solid var(--sage);border-radius:0 12px 12px 0;padding:12px 16px;font-size:14px;margin-top:.6rem}
+.takeaway b{color:var(--teal)}
+
+/* matrix table */
+.tbl-wrap{overflow-x:auto;margin:1rem 0 1.6rem;border-radius:var(--r);box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse;background:var(--white);font-size:13px;min-width:640px}
+th{background:var(--indigo);color:#fff;font-weight:700;padding:12px 14px;text-align:left;font-size:12.5px}
+td{padding:11px 14px;border-bottom:1px solid var(--border);vertical-align:top}
+tr:nth-child(even) td{background:#fdfaf3}
+.price-tag{font-weight:700;color:var(--rust)}
+
+/* SWOT */
+.swot{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:1rem 0 1.6rem}
+.swot-box{border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
+.swot-box h4{font-size:15px;font-weight:800;margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem}
+.swot-box h4 span{width:26px;height:26px;border-radius:8px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:13px}
+.swot-box ul{list-style:none}
+.swot-box li{padding:6px 0 6px 18px;position:relative;font-size:13.5px;line-height:1.6}
+.swot-box li::before{content:'▸';position:absolute;left:0;font-weight:700}
+.sw-s{background:linear-gradient(135deg,#f0f6f0,#e9f2e9)}
+.sw-s h4 span,.sw-s li::before{color:#4a7a4a}.sw-s h4 span{background:#4a7a4a}
+.sw-w{background:linear-gradient(135deg,#fdf0ec,#fae6df)}
+.sw-w h4 span,.sw-w li::before{color:var(--rust)}.sw-w h4 span{background:var(--rust)}
+.sw-o{background:linear-gradient(135deg,#fef8e9,#fdf0d6)}
+.sw-o h4 span,.sw-o li::before{color:var(--ochre)}.sw-o h4 span{background:var(--ochre)}
+.sw-t{background:linear-gradient(135deg,#f0f1f4,#e6e8ee)}
+.sw-t h4 span,.sw-t li::before{color:var(--indigo)}.sw-t h4 span{background:var(--indigo)}
+
+/* playbook steps */
+.step{display:flex;gap:18px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;margin-bottom:14px;box-shadow:var(--shadow)}
+.step-n{flex-shrink:0;width:42px;height:42px;border-radius:12px;background:linear-gradient(135deg,var(--rust),var(--terra));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px}
+.step-c h4{font-size:16px;font-weight:800;color:var(--indigo);margin-bottom:.3rem}
+.step-c p{font-size:14px;color:var(--text2);margin-bottom:.4rem}
+.step-c .pill{display:inline-block;font-size:11.5px;background:var(--sand);color:var(--text2);padding:3px 10px;border-radius:99px;margin:2px 4px 2px 0}
+
+/* price ladder */
+.ladder{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:1rem 0}
+.ladder-item{background:var(--white);border:1px solid var(--border);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.ladder-item .cat{font-size:14px;font-weight:700;color:var(--indigo)}
+.ladder-item .rng{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--rust);margin:2px 0}
+.ladder-item .ref{font-size:12px;color:var(--textm)}
+
+/* warning */
+.warn{background:linear-gradient(135deg,#fdf0ec,#fae7e0);border:1px solid var(--terra);border-radius:var(--r);padding:22px 24px;margin:1rem 0}
+.warn h4{color:var(--deepred);font-size:15px;margin-bottom:.7rem;font-weight:800}
+.warn ul{list-style:none}
+.warn li{padding:6px 0 6px 24px;position:relative;font-size:14px;border-bottom:1px dashed rgba(140,47,42,.18)}
+.warn li:last-child{border-bottom:0}
+.warn li::before{content:'⚠';position:absolute;left:0;color:var(--deepred)}
+
+/* sources */
+.sources{background:var(--white);border:1px solid var(--border);border-radius:var(--r);padding:22px 26px;margin-top:1rem;box-shadow:var(--shadow)}
+.sources h4{font-size:14px;font-weight:800;color:var(--indigo);margin-bottom:.8rem;letter-spacing:.5px}
+.sources ol{padding-left:20px;font-size:13px;color:var(--text2)}
+.sources li{padding:4px 0;word-break:break-all}
+
+.note{font-size:12.5px;color:var(--textm);font-style:italic;margin-top:.4rem}
+.footer{text-align:center;padding:2.5rem 1rem;color:var(--textm);font-size:12.5px;border-top:1px solid var(--border);margin-top:3rem}
+sup a{font-size:10px;color:var(--rust);font-weight:700;padding:0 1px}
+
+@media(max-width:760px){
+  .cover h1{font-size:36px}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .swot{grid-template-columns:1fr}
+  .ladder{grid-template-columns:1fr}
+  .kv{grid-template-columns:80px 1fr}
+  .section-title{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div><div class="blob b4"></div>
+  <div class="cover-inner">
+    <span class="cover-badge">市场 · 竞品 · 自我诊断 · 落地打法</span>
+    <h1>ANANDALAM <em>藏地美学</em><br>出海欧美深度报告</h1>
+    <div class="cover-zh">藏毯 · 牦牛绒围巾 · 藏银饰品 — 非遗纯手工</div>
+    <p class="cover-sub">面向欧美市场的机会评估、6 大对标品牌深度拆解（含官网视觉）、<br>ANANDALAM 优劣势诊断，与独立站启动可落地打法</p>
+    <div class="cover-stats">
+      <div class="cstat"><div class="cstat-num">$70B</div><div class="cstat-label">全球手工地毯市场</div></div>
+      <div class="cstat"><div class="cstat-num">11.75%</div><div class="cstat-label">地毯市场 CAGR</div></div>
+      <div class="cstat"><div class="cstat-num">6</div><div class="cstat-label">对标品牌深拆</div></div>
+      <div class="cstat"><div class="cstat-num">3</div><div class="cstat-label">核心品类</div></div>
+    </div>
+    <p style="color:rgba(255,255,255,.4);font-size:12px;margin-top:1.8rem">报告日期 2026-06-22 · 数据均带来源 · 推断内容已标注</p>
+  </div>
+</div>
+
+<div class="body">
+
+<div class="tldr">
+  <h3>⬢ 核心结论（先看这个）</h3>
+  <ul>
+    <li><b>赛道顺风</b>：手工地毯市场约 700 亿美元，整体地毯市场 2026 年达 884.8 亿美元、年复合增长率 11.75%，驱动力正是"手工艺 + 可持续 + 家居个性化"<sup><a href="#s1">[1]</a><a href="#s2">[2]</a></sup>——三条全部命中藏地美学。</li>
+    <li><b>有现成天花板可抄</b>：牦牛绒有 Norlha / Shokay，藏毯有 Jan Kath / Tufenkian，藏银有 Pippa Small——打法、定价、叙事都已被验证，无需从零摸索。</li>
+    <li><b>瑞虎是尖刀</b>：欧美藏家对藏式虎纹毯有现成收藏文化（密宗禅修 / 护佑象征）<sup><a href="#s3">[3]</a></sup>，天然有内容钩子。</li>
+    <li><b>最大短板是"品牌故事缺人"</b>：竞品都有真实创始人 + 工匠 + 村庄 + 影像背书；ANANDALAM 目前只有诗意文案，这是出海第一优先要补的资产。</li>
+    <li><b>价格站位有空档</b>：卡在 Norlha 顶奢与 Etsy 低价货之间做"可及的工艺奢侈品"（accessible craft luxury）。</li>
+  </ul>
+</div>
+
+<!-- ============ 1 市场 ============ -->
+<div class="section-title"><span class="num">1</span>市场全景：欧美机会有多大</div>
+<div class="section-sub">MARKET LANDSCAPE — 数据与来源</div>
+<hr class="divider">
+
+<div class="stats-grid">
+  <div class="statbox"><div class="n">$70B</div><div class="l">全球手工地毯市场规模<sup><a href="#s1">[1]</a></sup></div></div>
+  <div class="statbox"><div class="n">$88.48B</div><div class="l">2026 年整体地毯市场<sup><a href="#s2">[2]</a></sup></div></div>
+  <div class="statbox"><div class="n">11.75%</div><div class="l">2026→2034 CAGR<sup><a href="#s2">[2]</a></sup></div></div>
+  <div class="statbox"><div class="n">$170.87B</div><div class="l">2034 年市场预测<sup><a href="#s2">[2]</a></sup></div></div>
+</div>
+
+<div class="card">
+  <h3>① 手工地毯是最大机会池，增长逻辑正中藏地美学</h3>
+  <p class="lead">研究将手工地毯市场规模列为约 <b>700 亿美元</b>；整体地毯市场预计 2026 年达 <b>884.8 亿美元</b>，并以 <b>11.75%</b> 的年复合增长率向 2034 年的 1708.7 亿美元增长。增长被明确归因于三点：消费者对手工艺产品兴趣上升、家居个性化趋势、对可持续/环保材料的偏好<sup><a href="#s1">[1]</a><a href="#s2">[2]</a></sup>。这三条恰好是 ANANDALAM 已具备的资产（手工编织 / 限量 / 藏地高原羊毛 + 植物染）。</p>
+</div>
+
+<div class="card">
+  <h3>② 瑞虎踩中欧美藏家的文化锚点</h3>
+  <p class="lead">据维基百科 Tibetan rug 条目：西方收藏者对藏毯的兴趣，很大程度由 <b>虎纹毯</b> 点燃——因其与密宗禅修相关；在宗教语境中虎皮象征护佑、与忿怒尊画像中的虎皮座相联系<sup><a href="#s3">[3]</a></sup>。这意味着你的"瑞虎"圆毯不只是装饰品，而是带文化叙事的收藏级单品，可做引流款与内容钩子。</p>
+</div>
+
+<div class="card">
+  <h3>③ 牦牛绒的"可及奢侈"叙事已被验证</h3>
+  <p class="lead">牦牛绒（khullu）是牦牛过冬的细软底绒，每年夏季自然脱落、手工采集；一条冬季围巾约需 <b>7 头牦牛一整年的绒</b><sup><a href="#s4">[4]</a></sup>。Shokay 援引联合国报告称牦牛绒"媲美羊绒"，并主打比传统羊毛 <b>暖 30%、透气 120%</b><sup><a href="#s5">[5]</a></sup>。核心卖点话术现成：<i>比羊毛暖、比羊绒可及、更可持续</i>。</p>
+</div>
+
+<!-- ============ 2 竞品拆解 ============ -->
+<div class="section-title"><span class="num">2</span>对标品牌深度拆解</div>
+<div class="section-sub">COMPETITOR TEARDOWN — 含官网真实截图 · 6 大品牌</div>
+<hr class="divider">
+
+<!-- Norlha -->
+<div class="brand">
+  <div class="brand-shot"><img src="img/norlha-scarves.png" alt="Norlha 围巾集合页"></div>
+  <div class="brand-cap">▲ Norlha 牦牛绒围巾集合页（norlha.com）：编辑式时装大片 + 极简陈列，单品如艺术品逐一呈现</div>
+  <div class="brand-body">
+    <div class="brand-head"><h3>Norlha</h3><span class="brand-tag star">★ 北极星 · 牦牛绒</span></div>
+    <div class="brand-role">最直接对标——和 ANANDALAM 同源（藏地 + 工匠 + 植物染 + 限量）</div>
+    <dl class="kv">
+      <dt>创立</dt><dd>2007 年，藏地安多 Ritoma 村，由美国人类学家 Kim Yeshi 与女儿 Dechen 创立<sup><a href="#s6">[6]</a></sup></dd>
+      <dt>规模</dt><dd>约 120 名员工，全部为牧民转型的工匠<sup><a href="#s6">[6]</a></sup></dd>
+      <dt>定位</dt><dd>"首个牦牛绒 atelier，致敬藏地高原的人与牧场"；价值观：传统 · 创新 · 对牦牛绒的共同信念<sup><a href="#s7">[7]</a></sup></dd>
+      <dt>定价</dt><dd><span class="price-tag">$255–275</span>（Nomad 细款围巾，100% 牦牛绒）<sup><a href="#s8">[8]</a></sup></dd>
+      <dt>叙事</dt><dd>天然植物染、"吉祥语与符号织入藏地日常"、"手绘祈福"；限量 + waitlist 稀缺机制<sup><a href="#s7">[7]</a></sup></dd>
+      <dt>渠道</dt><dd>Shopify DTC + 精品店批发（如 Alder &amp; Co.）；多币种站点</dd>
+    </dl>
+    <div class="takeaway"><b>可借鉴：</b>把"无尽的喜乐 ANANDALAM"诗意文案，升级成 Norlha 级的真实人物故事——具体工匠、具体村庄、"一条围巾 = 七头牦牛一年的绒"这种可感知的数字叙事。限量 waitlist 制造稀缺。</div>
+  </div>
+</div>
+
+<!-- Jan Kath -->
+<div class="brand">
+  <div class="brand-shot"><img src="img/jankath-home.png" alt="Jan Kath 首页"></div>
+  <div class="brand-cap">▲ Jan Kath 首页（jan-kath.com）：暗调戏剧化呈现，地毯作为"当代艺术品"——CYPRINUS 系列</div>
+  <div class="brand-body">
+    <div class="brand-head"><h3>Jan Kath</h3><span class="brand-tag star">★ 北极星 · 藏毯设计</span></div>
+    <div class="brand-role">设计天花板——把传统编织升维成当代艺术</div>
+    <dl class="kv">
+      <dt>创立</dt><dd>德国人创立，20 岁移居加德满都；至今 Kathmandu 仍是最强工艺纽带<sup><a href="#s9">[9]</a></sup></dd>
+      <dt>工艺</dt><dd>藏地高原羊毛，super 80 / 100 knot；电脑设计 + 坚持老法手工编织<sup><a href="#s9">[9]</a></sup></dd>
+      <dt>定位</dt><dd>"contemporary rug art"；功能性艺术品，非家居用品<sup><a href="#s10">[10]</a></sup></dd>
+      <dt>叙事</dt><dd>系列以故事命名：喜马拉雅夜空→Spacecrafted、丛林→Jungle、航拍→Tabriz Canal Aerial<sup><a href="#s9">[9]</a></sup></dd>
+      <dt>认证</dt><dd>STEP 认证（社会 / 生态标准、零童工）<sup><a href="#s10">[10]</a></sup>；8 家 showroom</dd>
+    </dl>
+    <div class="takeaway"><b>可借鉴：</b>你已有的"画廊式陈列"视觉方向完全正确（人站在展墙前看毯）。学 Jan Kath 把系列做成有故事钩子的命名体系，让毯子从"商品"变成"可收藏的艺术叙事"。</div>
+  </div>
+</div>
+
+<!-- Pippa Small -->
+<div class="brand">
+  <div class="brand-shot"><img src="img/pippasmall-home.png" alt="Pippa Small 首页"></div>
+  <div class="brand-cap">▲ Pippa Small 首页（pippasmall.com）：原矿宝石美学 + 编辑式人像大片，珠宝即"护身符"</div>
+  <div class="brand-body">
+    <div class="brand-head"><h3>Pippa Small × Turquoise Mountain</h3><span class="brand-tag star">★ 北极星 · 藏银 / 珠宝</span></div>
+    <div class="brand-role">道德珠宝叙事天花板——人类学家做"现代护身符"</div>
+    <dl class="kv">
+      <dt>创始人</dt><dd>英国珠宝师、人类学家、人权工作者，2013 年获 MBE<sup><a href="#s11">[11]</a></sup></dd>
+      <dt>定位</dt><dd>"talismans for modern life"（现代生活的护身符）；每件是带记忆与意义的个人符号<sup><a href="#s12">[12]</a></sup></dd>
+      <dt>供应链</dt><dd>Fairtrade / Fair Mined 原料，拒绝大规模采矿；在冲突地区创造生计<sup><a href="#s12">[12]</a></sup></dd>
+      <dt>合作</dt><dd>与 Turquoise Mountain 在阿富汗、缅甸、黎凡特合作，保护手工艺<sup><a href="#s12">[12]</a></sup></dd>
+      <dt>叙事</dt><dd>用纪录片、播客、日志做多媒体故事，强化工匠—佩戴者的连接<sup><a href="#s12">[12]</a></sup></dd>
+    </dl>
+    <div class="takeaway"><b>可借鉴：</b>藏银天然有咒语、护身符、藏传符号资产——这正是 Pippa Small 模式的核心。把藏银饰品定位成"talisman"，配影像化工匠故事，直接打欧美灵性 / wellness 人群。</div>
+  </div>
+</div>
+
+<!-- Shokay -->
+<div class="brand">
+  <div class="brand-shot"><img src="img/shokay-product.png" alt="Shokay 产品页"></div>
+  <div class="brand-cap">▲ Shokay 产品页（shokay.com）：结构化 PDP，USD 定价、限时折扣、Sold out 稀缺、尺码指南、规格折叠</div>
+  <div class="brand-body">
+    <div class="brand-head"><h3>Shokay</h3><span class="brand-tag">牦牛绒 · 规模化对标</span></div>
+    <div class="brand-role">中端可及 + 电商规模化打法</div>
+    <dl class="kv">
+      <dt>创立</dt><dd>约 2007 年，由哈佛背景的 Carol Chyau 创立<sup><a href="#s5">[5]</a></sup></dd>
+      <dt>定位</dt><dd>"全球领先的责任牦牛绒供应商"；支持 4000+ 牧民家庭<sup><a href="#s13">[13]</a></sup></dd>
+      <dt>定价</dt><dd><span class="price-tag">$82–170</span>（围巾，如 Serene $170→$135、提花款 $82→$65）<sup><a href="#s8">[8]</a><a href="#s13">[13]</a></sup></dd>
+      <dt>卖点</dt><dd>"Warmer than cashmere. Softer than wool. Sustainably sourced."；牦牛绒比羊毛贵、比羊绒可及<sup><a href="#s5">[5]</a></sup></dd>
+      <dt>运营</dt><dd>满 $200 免邮、首单 15% 折扣；当代提花设计、多色</dd>
+    </dl>
+    <div class="takeaway"><b>可借鉴：</b>PDP 模板照抄——材质 / 尺码 / 规格折叠 + 限时折扣 + Sold out 稀缺 + 通知补货。定价上 ANANDALAM 围巾可卡在 Shokay（$82–170）与 Norlha（$255–275）之间。</div>
+  </div>
+</div>
+
+<!-- Tufenkian -->
+<div class="brand">
+  <div class="brand-shot"><img src="img/tufenkian-rugs.png" alt="Tufenkian 藏毯集合页"></div>
+  <div class="brand-cap">▲ Tufenkian 藏毯集合页（tufenkian.com）：真实价格锚点——藏毯多为 "Starts at $1,200 / $1,500" 起</div>
+  <div class="brand-body">
+    <div class="brand-head"><h3>Tufenkian</h3><span class="brand-tag">藏毯 · 社会责任叙事</span></div>
+    <div class="brand-role">工艺 + 公益品牌故事标杆，顶奢价格带</div>
+    <dl class="kv">
+      <dt>创立</dt><dd>1980 年代末，James Tufenkian 创立<sup><a href="#s14">[14]</a></sup></dd>
+      <dt>工艺</dt><dd>尼泊尔 + 亚美尼亚手工打结；藏地高原 + 高加索羊毛，含天然羊毛脂、可优雅陈化<sup><a href="#s14">[14]</a></sup></dd>
+      <dt>定价</dt><dd><span class="price-tag">藏毯 $1,200–1,500+ 起</span>（官网集合页实测）<sup><a href="#s15">[15]</a></sup></dd>
+      <dt>叙事</dt><dd>强调对环境与弱势社区的社会责任承诺<sup><a href="#s14">[14]</a></sup></dd>
+    </dl>
+    <div class="takeaway"><b>可借鉴：</b>大藏毯定价参考——$1,200 是顶奢起步线。ANANDALAM 大毯可做 $800–2500 的"可及"区间。社会责任叙事是高端毯标配，需补社区回馈数据。</div>
+  </div>
+</div>
+
+<!-- Odegard / Kora 简述 -->
+<div class="card">
+  <h3>另外两家值得记一笔</h3>
+  <p class="lead"><b>Odegard（藏毯）</b>——signature 质量名为 "Youngtse"（藏语"最好中的最好"），手梳手纺喜马拉雅羊毛、百年技法<sup><a href="#s16">[16]</a></sup>。<i>借鉴：用藏语词做质量分级话术，建立品牌专属术语。</i><br>
+  <b>Kora（牦牛绒）</b>——把牦牛绒做成户外功能性基础层（base / mid layer），直接向高原牧民采购、不剪毛不伤害动物<sup><a href="#s17">[17]</a></sup>。<i>借鉴：牦牛绒的功能性细分角度（保暖 / 透气 / 户外），是围巾之外的差异化方向。</i></p>
+</div>
+
+<!-- 矩阵 -->
+<div class="section-title"><span class="num">3</span>对标矩阵：一张表看清格局</div>
+<div class="section-sub">POSITIONING MATRIX</div>
+<hr class="divider">
+<div class="tbl-wrap">
+<table>
+<thead><tr><th>品牌</th><th>品类</th><th>定价带</th><th>核心定位</th><th>叙事支柱</th><th>渠道</th></tr></thead>
+<tbody>
+<tr><td><b>Norlha</b></td><td>牦牛绒</td><td class="price-tag">$255–275</td><td>顶奢 atelier</td><td>人类学家 + 牧民工匠 + 限量</td><td>DTC + 精品店</td></tr>
+<tr><td><b>Shokay</b></td><td>牦牛绒</td><td class="price-tag">$82–170</td><td>责任 · 可及</td><td>4000 牧民家庭 + cashmere 替代</td><td>DTC + 批发</td></tr>
+<tr><td><b>Kora</b></td><td>牦牛绒</td><td class="price-tag">高端户外</td><td>功能性能层</td><td>性能 + 直采牧民</td><td>DTC</td></tr>
+<tr><td><b>Jan Kath</b></td><td>藏毯</td><td class="price-tag">顶奢</td><td>当代地毯艺术</td><td>设计师 + 故事化系列</td><td>Showroom</td></tr>
+<tr><td><b>Tufenkian</b></td><td>藏毯</td><td class="price-tag">$1,200+</td><td>工艺 + 社会责任</td><td>手工打结 + 公益</td><td>DTC + 门店</td></tr>
+<tr><td><b>Odegard</b></td><td>藏毯</td><td class="price-tag">顶奢</td><td>质量分级</td><td>"Youngtse" 百年技法</td><td>设计渠道</td></tr>
+<tr><td><b>Pippa Small</b></td><td>珠宝</td><td class="price-tag">高端</td><td>道德护身符</td><td>人类学家 + Fairtrade + 影像</td><td>DTC + 门店</td></tr>
+<tr style="background:#fff5e6"><td><b>★ ANANDALAM</b></td><td>毯+围巾+银</td><td class="price-tag">待定位</td><td><b>可及的工艺奢侈</b></td><td><b>藏地美学 + 非遗手工（人物待补）</b></td><td><b>独立站待建</b></td></tr>
+</tbody>
+</table>
+</div>
+<p class="note">注：Jan Kath / Odegard 顶奢标注为定性（官网未公开统一价目）；其余价格带为官网 / 产品页实测。</p>
+
+<!-- ============ 4 SWOT ============ -->
+<div class="section-title"><span class="num">4</span>ANANDALAM 自我诊断（SWOT）</div>
+<div class="section-sub">基于你现有产品与小程序视觉，对标上述竞品</div>
+<hr class="divider">
+
+<div class="swot">
+  <div class="swot-box sw-s">
+    <h4><span>S</span>优势 Strengths</h4>
+    <ul>
+      <li><b>材料叙事同源</b>：藏地高原羊毛 + 植物染 + 手工编织 + 非遗，与 Norlha / Tufenkian 同一套高端材料故事</li>
+      <li><b>视觉成熟度高</b>：画廊式陈列、极简米色详情页、PRODUCT/CRAFT/ORIGIN 结构化、中英双语标签——起点已接近欧美高端审美</li>
+      <li><b>瑞虎踩中文化锚点</b>：虎纹毯有现成欧美收藏传统</li>
+      <li><b>多品类协同</b>：毯 + 围巾 + 银，可做"藏地美学生活方式"集合品牌（对标 Norlha atelier 模式）</li>
+      <li><b>价格相对可及</b>：¥3999 毯 / ¥1199 挂毯 ≈ $165–550，远低于顶奢，有空档</li>
+    </ul>
+  </div>
+  <div class="swot-box sw-w">
+    <h4><span>W</span>劣势 Weaknesses</h4>
+    <ul>
+      <li><b>品牌故事缺"人"</b>（最致命）：竞品都有真实创始人 + 工匠 + 村庄 + 影像；ANANDALAM 目前只有诗意文案</li>
+      <li><b>无海外基建</b>：无英文独立站、海外支付 / 物流 / 退换体系</li>
+      <li><b>无第三方信任背书</b>：竞品标配 B Corp / Fairtrade / STEP，你暂无</li>
+      <li><b>冷启动无 reviews / UGC</b>，信任难建立</li>
+      <li><b>品牌名不统一</b>：ANANDA藏毯 vs ANANDALAM，英文识别度待建</li>
+      <li><b>小尺寸为主</b>（40×40），与"收藏级大毯"画廊定位有张力</li>
+    </ul>
+  </div>
+  <div class="swot-box sw-o">
+    <h4><span>O</span>机会 Opportunities</h4>
+    <ul>
+      <li>手工地毯 $70B + CAGR 11.75%，artisanal / sustainable 顺风<sup><a href="#s1">[1]</a><a href="#s2">[2]</a></sup></li>
+      <li>牦牛绒"cashmere alternative"叙事已验证，$82–275 价格带有空档</li>
+      <li>灵性 / wellness 人群买单藏传符号、护身符（Pippa Small 模式）</li>
+      <li>藏式虎纹毯 wall-art 家居艺术化趋势</li>
+      <li>多品类整合做"藏地美学"集合品牌的窗口期</li>
+    </ul>
+  </div>
+  <div class="swot-box sw-t">
+    <h4><span>T</span>威胁 Threats</h4>
+    <ul>
+      <li>Norlha / Jan Kath / Tufenkian 已占顶奢心智 + 渠道（精品店 / 1stDibs）</li>
+      <li>地缘政治敏感：原产地表述需谨慎、合规溯源</li>
+      <li>Etsy / Amazon 大量低价"Tibetan tiger rug"印度尼泊尔货稀释品类、压价</li>
+      <li>手工产能 + 定制 60–90 天 vs 海外快物流期待，履约风险</li>
+      <li><b>文化挪用舆论风险</b>——必须真实溯源、尊重、利益回馈社区</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ============ 5 打法 ============ -->
+<div class="section-title"><span class="num">5</span>独立站出海落地打法</div>
+<div class="section-sub">ACTIONABLE PLAYBOOK — 从定位到上线</div>
+<hr class="divider">
+
+<div class="step">
+  <div class="step-n">1</div>
+  <div class="step-c">
+    <h4>品牌定位：可及的工艺奢侈品（Accessible Craft Luxury）</h4>
+    <p>明确卡在 <b>Norlha 顶奢</b> 与 <b>Etsy 低价货</b> 之间——同样的藏地材料与手工故事，但价格门槛更低、设计更当代。一句话定位："藏地非遗手工，做进你的当代生活"。</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">2</div>
+  <div class="step-c">
+    <h4>定价带（对标锚定，非拍脑袋）</h4>
+    <div class="ladder">
+      <div class="ladder-item"><div class="cat">牦牛绒围巾</div><div class="rng">$120–260</div><div class="ref">卡 Shokay $82–170 与 Norlha $255–275 之间</div></div>
+      <div class="ladder-item"><div class="cat">小挂毯 / 坐垫</div><div class="rng">$150–400</div><div class="ref">瑞虎 ¥3999 圆毯 ≈ $550，区间合理</div></div>
+      <div class="ladder-item"><div class="cat">大藏毯</div><div class="rng">$800–2500</div><div class="ref">Tufenkian $1,200 起，做"可及"下探</div></div>
+      <div class="ladder-item"><div class="cat">藏银饰品</div><div class="rng">$60–300</div><div class="ref">talisman 叙事可溢价</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">3</div>
+  <div class="step-c">
+    <h4>品牌故事工程（最高优先级，补最大短板）</h4>
+    <p>这是与 Norlha / Pippa Small 拉开 or 追平的关键。要做四个真实资产：</p>
+    <span class="pill">创始人故事页：你深入藏地的真实动机</span>
+    <span class="pill">工匠人物 + 村庄 + 工序影像 / 纪录片</span>
+    <span class="pill">材料溯源页：羊毛 / 牦牛绒采集 + 植物染</span>
+    <span class="pill">符号词典：每个图案的祝福含义（瑞虎=护佑）</span>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">4</div>
+  <div class="step-c">
+    <h4>信任背书</h4>
+    <p>申请 / 展示可持续认证、公平贸易资质，公开"支持 X 个牧民家庭 / 社区回馈"的可查数据——竞品标配，冷启动建信任的硬通货。</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">5</div>
+  <div class="step-c">
+    <h4>网站结构（Shopify DTC）</h4>
+    <p>编辑式首页（lifestyle 大片 + 故事）→ 结构化 PDP（材质 / 工艺 / 尺寸 / 周期 / 符号含义 / 护理，把你现有 PRODUCT·CRAFT·ORIGIN 英文化）→ 限量 waitlist 稀缺机制（学 Norlha）→ 默认多币种 / 英文 / USD。</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">6</div>
+  <div class="step-c">
+    <h4>视觉与品牌名统一</h4>
+    <p>保持画廊式陈列（已是优势），统一英文品牌名为 <b>ANANDALAM</b>，弃用混用的"ANANDA藏毯"，建立稳定的海外识别。</p>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">7</div>
+  <div class="step-c">
+    <h4>渠道组合</h4>
+    <span class="pill">Shopify DTC（主阵地）</span>
+    <span class="pill">Instagram / Pinterest（家居 + wellness 视觉种草）</span>
+    <span class="pill">欧美买手店 / 精品店批发</span>
+    <span class="pill">1stDibs（高端大毯）</span>
+    <span class="pill">Etsy（饰品 / 小件引流款）</span>
+  </div>
+</div>
+
+<div class="step">
+  <div class="step-n">8</div>
+  <div class="step-c">
+    <h4>物流与履约</h4>
+    <p>现货走海外仓（48h 发货优势保留），定制 60–90 天周期在 PDP 透明标注 + 预售机制管理预期，避免差评。</p>
+  </div>
+</div>
+
+<!-- 注意事项 -->
+<div class="section-title"><span class="num">6</span>启动注意事项 · 风险红线</div>
+<div class="section-sub">必须提前避坑</div>
+<hr class="divider">
+<div class="warn">
+  <h4>⚠ 上线前务必处理</h4>
+  <ul>
+    <li><b>文化尊重与挪用风险</b>：所有藏地表述必须真实溯源、利益回馈社区可查；避免空泛挪用文化符号，这是欧美舆论最敏感的雷区。</li>
+    <li><b>原产地与合规表述</b>：地缘政治敏感，措辞需谨慎严谨，配合材料 / 工艺真实溯源文档。</li>
+    <li><b>履约预期管理</b>：手工 + 定制周期长，必须在 PDP 明示交期、设预售，切勿用"快物流"承诺反被差评。</li>
+    <li><b>低价货干扰</b>：Etsy / Amazon 充斥低价"Tibetan tiger rug"，必须靠真实手工故事 + 视觉 + 认证做出区隔，不打价格战。</li>
+    <li><b>信任冷启动</b>：上线即铺 KOL / 编辑 PR + 引导 UGC / reviews，否则无背书难转化。</li>
+  </ul>
+</div>
+
+<!-- 来源 -->
+<div class="section-title"><span class="num">7</span>数据来源</div>
+<div class="section-sub">所有数据可溯源 · 推断已标注</div>
+<hr class="divider">
+<div class="sources">
+  <h4>SOURCES</h4>
+  <ol>
+    <li id="s1">手工地毯市场约 $70B / 增长驱动力 — NextMSC：<a href="https://www.nextmsc.com/blogs/why-are-handmade-rugs-gaining-attention-in-the-luxury-market" target="_blank">why-are-handmade-rugs-gaining-attention-in-the-luxury-market</a></li>
+    <li id="s2">整体地毯市场 $88.48B(2026) / CAGR 11.75% / $170.87B(2034) — Fortune Business Insights：<a href="https://www.fortunebusinessinsights.com/carpets-rugs-market-104509" target="_blank">carpets-rugs-market-104509</a></li>
+    <li id="s3">藏式虎纹毯收藏文化 / 密宗护佑象征 — Wikipedia "Tibetan rug"：<a href="https://en.wikipedia.org/wiki/Tibetan_rug" target="_blank">en.wikipedia.org/wiki/Tibetan_rug</a></li>
+    <li id="s4">牦牛绒 khullu / 一条围巾=7头牦牛一年绒 — AnOther Magazine（Norlha）：<a href="https://www.anothermag.com/fashion-beauty/12229/norlha-is-the-tibetan-label-changing-what-luxury-fashion-looks-like" target="_blank">anothermag.com — Norlha</a></li>
+    <li id="s5">牦牛绒"媲美羊绒" / 暖30% 透气120% / Carol Chyau — Shokay About：<a href="https://www.shokay.com/pages/about-us" target="_blank">shokay.com/pages/about-us</a></li>
+    <li id="s6">Norlha 创立 2007 / Ritoma / Kim &amp; Dechen Yeshi / 120 工匠 — AnOther Magazine：<a href="https://www.anothermag.com/fashion-beauty/12229/norlha-is-the-tibetan-label-changing-what-luxury-fashion-looks-like" target="_blank">anothermag.com — Norlha</a></li>
+    <li id="s7">Norlha 定位 / 价值观 / 吉祥符号 / waitlist — Norlha 官网：<a href="https://www.norlha.com/" target="_blank">norlha.com</a></li>
+    <li id="s8">Norlha 围巾 $255–275 / Shokay 围巾 $82–170 — 官网产品页实测：<a href="https://www.norlha.com/products/classic-white-yak-wool-scarf" target="_blank">Norlha PDP</a> · <a href="https://www.shokay.com/products/serene-scarf-caramel" target="_blank">Shokay PDP</a></li>
+    <li id="s9">Jan Kath 创始 / 藏地高原羊毛 / 故事化系列 — Wallpaper*：<a href="https://www.wallpaper.com/design/loom-town-rug-maker-jan-kath-on-weaving-a-global-success-story-from-kathmandu" target="_blank">wallpaper.com — Jan Kath</a></li>
+    <li id="s10">Jan Kath "contemporary rug art" / STEP 认证 — Jan Kath 官网：<a href="https://jan-kath.com/" target="_blank">jan-kath.com</a></li>
+    <li id="s11">Pippa Small 人类学家 / MBE — Wikipedia：<a href="https://en.wikipedia.org/wiki/Pippa_Small" target="_blank">en.wikipedia.org/wiki/Pippa_Small</a></li>
+    <li id="s12">Pippa Small talisman / Fairtrade / Turquoise Mountain / 影像叙事 — 官网 About：<a href="https://pippasmall.com/en-us/pages/about" target="_blank">pippasmall.com/about</a></li>
+    <li id="s13">Shokay 4000+ 牧民家庭 / 价格 — 搜索结果与官网：<a href="https://www.shokay.com/collections/accessories" target="_blank">shokay.com/collections/accessories</a></li>
+    <li id="s14">Tufenkian 创立 1980s / 工艺 / 社会责任 — Tufenkian 官网 &amp; CyrusRugs：<a href="https://www.tufenkian.com/" target="_blank">tufenkian.com</a></li>
+    <li id="s15">Tufenkian 藏毯 $1,200–1,500+ 起 — 官网集合页实测：<a href="https://www.tufenkian.com/collections/tibetan-nepalese-rugs" target="_blank">tufenkian.com/collections/tibetan-nepalese-rugs</a></li>
+    <li id="s16">Odegard "Youngtse" 质量分级 / 喜马拉雅羊毛 — Odegard 官网：<a href="https://www.odegardcarpets.com/odegard-carpet-qualities" target="_blank">odegardcarpets.com</a></li>
+    <li id="s17">Kora 牦牛绒功能性 / 直采牧民 — Kora Outdoor：<a href="https://www.koraoutdoor.com/" target="_blank">koraoutdoor.com</a></li>
+  </ol>
+  <p class="note">ANANDALAM 现状（产品 / 视觉 / 定价 ¥3999·¥1199 / 工艺 / 品类规划）依据 Yoga 提供的小程序截图整理。SWOT 与打法中的判断为基于上述数据的分析推断。</p>
+</div>
+
+<div class="footer">
+  ANANDALAM 藏地美学出海 · 市场与竞品深度报告 · 2026-06-22<br>
+  数据严谨可溯源 · 由 Claude Code 为 Yoga 编制
+</div>
+
+</div>
+</body>
+</html>
