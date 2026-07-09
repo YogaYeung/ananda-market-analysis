@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ANANDALAM 视觉手册与赴藏拍摄规划（图文版）</title>
+<style>
+:root{
+  --crimson:#7E2A1E; --gold:#B98A2F; --indigo:#2E3F55;
+  --wool:#F6F1E7; --umber:#2B2118;
+  --bg:var(--wool); --fg:#33281E; --muted:#6B5D4C;
+  --accent:var(--crimson); --accent-2:var(--gold);
+  --surface:#FCFAF4; --border:#DDD2BF;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font-family:"Segoe UI","Microsoft YaHei",system-ui,sans-serif;
+  line-height:1.75;font-size:16px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px 96px}
+.serif{font-family:Georgia,"Palatino Linotype","STZhongsong","SimSun",serif}
+
+header.hero{padding:80px 0 52px;border-bottom:3px double var(--accent-2)}
+.hero .mark{font-family:Georgia,serif;letter-spacing:.42em;font-size:15px;color:var(--accent);text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:Georgia,"STZhongsong","SimSun",serif;font-size:clamp(30px,5vw,44px);font-weight:600;margin:0 0 14px;line-height:1.28}
+.hero .slogan{font-family:Georgia,serif;font-style:italic;font-size:18px;color:var(--muted)}
+.hero .meta{margin-top:28px;display:flex;gap:26px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.hero .meta b{color:var(--fg)}
+
+nav.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin:32px 0 0}
+nav.toc a{display:block;padding:10px 14px;border:1px solid var(--border);background:var(--surface);color:var(--fg);text-decoration:none;font-size:14px}
+nav.toc a:hover{border-color:var(--accent);color:var(--accent)}
+nav.toc a .no{color:var(--accent-2);font-family:Georgia,serif;margin-right:8px}
+
+section{margin-top:72px}
+.kicker{font-size:12px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent-2);font-weight:700;margin-bottom:10px}
+h2{font-family:Georgia,"STZhongsong","SimSun",serif;font-size:28px;margin:0 0 6px;font-weight:600}
+h2 .no{color:var(--accent);margin-right:12px;font-style:italic}
+h3{font-size:18px;margin:36px 0 10px;font-weight:600}
+h3::before{content:"";display:inline-block;width:22px;height:3px;background:var(--accent);margin-right:10px;vertical-align:middle}
+p.lead{color:var(--muted);max-width:70ch;margin-top:4px}
+p{max-width:76ch}
+.note{background:var(--surface);border-left:4px solid var(--accent-2);padding:14px 18px;font-size:14px;margin:18px 0}
+.src{font-size:12.5px;color:var(--muted)}
+
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:18px}
+.swatch{border:1px solid var(--border);background:var(--surface)}
+.swatch .chip{height:88px}
+.swatch .info{padding:12px 14px;font-size:13px}
+.swatch .info b{display:block;font-size:14px}
+.swatch .info code{font-family:Consolas,monospace;color:var(--muted);font-size:12px}
+.swatch .use{color:var(--muted);display:block;margin-top:4px;line-height:1.5}
+
+.spec{border:1px solid var(--border);background:var(--surface);padding:26px 28px;margin-top:16px}
+.spec .row{padding:16px 0;border-bottom:1px dashed var(--border)}
+.spec .row:last-child{border-bottom:none}
+.spec .label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+
+/* 图组 */
+.figs{display:grid;grid-template-columns:repeat(auto-fill,minmax(215px,1fr));gap:12px;margin:16px 0 6px}
+.figs.big{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+figure{margin:0;border:1px solid var(--border);background:var(--surface)}
+figure a{display:block}
+figure img{width:100%;height:185px;object-fit:cover;display:block}
+.figs.big img{height:250px}
+figure video{width:100%;height:210px;background:#000;display:block}
+figcaption{padding:9px 11px;font-size:12.5px;color:var(--muted);line-height:1.55}
+figcaption b{color:var(--fg);display:block;font-size:12.5px;margin-bottom:2px}
+
+.tablebox{overflow-x:auto;border:1px solid var(--border);margin-top:16px}
+table{border-collapse:collapse;width:100%;font-size:14px;background:var(--surface)}
+th{text-align:left;padding:10px 14px;font-size:12.5px;letter-spacing:.08em;color:#FCFAF4;background:var(--accent);font-weight:600;white-space:nowrap}
+td{padding:10px 14px;border-top:1px solid var(--border);vertical-align:top}
+td.center{text-align:center}
+tr.groups td{background:var(--accent-2);color:#2B2118;font-weight:700;font-size:13px;letter-spacing:.12em}
+.mini{width:118px;height:78px;object-fit:cover;display:inline-block;margin:2px 3px 2px 0;border:1px solid var(--border);vertical-align:top}
+td .cap{display:block;font-size:11.5px;color:var(--muted);line-height:1.4;max-width:250px}
+
+.wire{display:flex;flex-direction:column;gap:14px;margin-top:16px}
+.wire .blk{border:1.5px solid var(--border);background:var(--surface);padding:16px 20px}
+.wire .blk.hot{border-color:var(--accent);border-left-width:6px}
+.wire .blk .head{display:flex;gap:16px;align-items:baseline;flex-wrap:wrap}
+.wire .blk b{font-size:15.5px;min-width:200px}
+.wire .blk span.desc{font-size:13.5px;color:var(--muted);flex:1;min-width:240px}
+.wire .blk .need{font-size:12px;color:var(--accent);white-space:nowrap;font-weight:700}
+.wire .refs{margin-top:10px}
+
+.dd{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:16px}
+.dd .col{border:1px solid var(--border);background:var(--surface);padding:18px 20px}
+.dd .col h4{margin:0 0 10px;font-size:15px}
+.dd .col.do h4{color:#3E6B35}
+.dd .col.dont h4{color:var(--accent)}
+.dd ul{margin:0;padding-left:20px;font-size:14px}
+.dd li{margin-bottom:7px}
+
+ul.plain{padding-left:22px;font-size:15px}
+ul.plain li{margin-bottom:8px;max-width:74ch}
+footer{margin-top:80px;padding-top:24px;border-top:3px double var(--accent-2);font-size:13px;color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <div class="mark">A&nbsp;N&nbsp;A&nbsp;N&nbsp;D&nbsp;A&nbsp;L&nbsp;A&nbsp;M</div>
+  <h1>视觉识别手册 &amp; 赴藏拍摄规划 <span style="font-size:.55em;color:var(--muted)">图文版</span></h1>
+  <div class="slogan serif">Ritual in the Ordinary. Craft from the Roof of the World.</div>
+  <div class="meta">
+    <div><b>核心品类</b>　手工藏毯（Gyantse 系列）</div>
+    <div><b>定位</b>　Accessible Craft Luxury</div>
+    <div><b>市场</b>　北美 Shopify DTC（2026.9–10 上线）</div>
+    <div><b>版本</b>　V2 图文版 · 2026-07-09</div>
+  </div>
+  <div class="note" style="margin-top:26px"><b>使用说明：</b>图片点击可看原图，视频可直接在线播放。素材完整版（含参考点注释）见飞书多维表格「ANANDALAM 视觉参考素材库」。</div>
+  <nav class="toc">
+    <a href="#s1"><span class="no">壹</span>品牌基石</a>
+    <a href="#s2"><span class="no">贰</span>色彩系统</a>
+    <a href="#s3"><span class="no">叁</span>字体系统</a>
+    <a href="#s4"><span class="no">肆</span>摄影风格铁律</a>
+    <a href="#s5"><span class="no">伍</span>首页规划</a>
+    <a href="#s6"><span class="no">陆</span>PDP 详情页规划</a>
+    <a href="#s7"><span class="no">柒</span>Instagram 内容矩阵</a>
+    <a href="#s8"><span class="no">捌</span>赴藏拍摄 Shot List</a>
+    <a href="#s9"><span class="no">玖</span>文化红线清单</a>
+  </nav>
+</header>
+
+<!-- ============ 01 ============ -->
+<section id="s1">
+  <div class="kicker">Section 01</div>
+  <h2><span class="no serif">壹</span>品牌基石</h2>
+  <p class="lead">以下取自已定稿的 BP 与三份调研报告，是所有视觉决策的出发点，不做改动。</p>
+  <div class="tablebox"><table>
+    <tr><th style="width:160px">要素</th><th>内容</th></tr>
+    <tr><td><b>英文定位</b></td><td class="serif" style="font-style:italic">ANANDALAM brings the sacred craftsmanship of the Tibetan Plateau into contemporary living spaces.</td></tr>
+    <tr><td><b>产地三角</b></td><td>拉萨（藏饰+枢纽）· <b>江孜（藏毯，核心）</b> · 林芝（牦牛绒）——视觉上必须让「三个真实地名」反复出现</td></tr>
+    <tr><td><b>核心人群</b></td><td>A Wellness Enthusiast（冥想/瑜伽，28–40）· B Design Collector（高端家居藏家，35–55）· C Cultural Explorer（25–35）</td></tr>
+    <tr><td><b>价格带</b></td><td>藏毯 $375–3,111 / 围巾 $267–422 → 高客单，每张图都要「值这个价」</td></tr>
+    <tr><td><b>最大短板</b></td><td>品牌故事「缺人」→ <b>本次拍摄的头号任务是把「人」拍回来</b></td></tr>
+  </table></div>
+
+  <h3>视觉人格（三个词，各配一张定调参考）</h3>
+  <div class="figs big">
+    <figure><a href="assets/56_Norlha-首屏黑白工艺特写.jpg"><img loading="lazy" src="assets/56_Norlha-首屏黑白工艺特写.jpg" alt="静"></a><figcaption><b>静 Quiet — Norlha 首屏</b>顶奢敢用黑白工艺过程做首屏：留白、低饱和、慢节奏，不做促销感。</figcaption></figure>
+    <figure><a href="assets/63_Norlha-织工木织机织蓝色面料.jpg"><img loading="lazy" src="assets/63_Norlha-织工木织机织蓝色面料.jpg" alt="真"></a><figcaption><b>真 Grounded — Norlha 工坊实拍</b>环境真实但构图干净，「工坊实拍不土」的标杆。纪实优先于摆拍。</figcaption></figure>
+    <figure><a href="assets/79_JanKath-染色纱线静物油画感.jpg"><img loading="lazy" src="assets/79_JanKath-染色纱线静物油画感.jpg" alt="贵"></a><figcaption><b>贵 Considered — Jan Kath 纱线静物</b>把原材料拍成静物油画：细节经营出的贵，不是金光闪闪的贵。</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section id="s2">
+  <div class="kicker">Section 02</div>
+  <h2><span class="no serif">贰</span>色彩系统</h2>
+  <p class="lead">色板从藏地物料本身取色：僧袍与大漆的红、唐卡鎏金、植物染靛蓝、未染色的高原羊毛。<span class="src">（色值为本手册设计定义）</span></p>
+  <div class="swatches">
+    <div class="swatch"><div class="chip" style="background:#7E2A1E"></div><div class="info"><b>藏红 Lacquer Crimson</b><code>#7E2A1E</code><span class="use">主色。CTA、标题强调。全页面积 ≤10%</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#B98A2F"></div><div class="info"><b>鎏金 Gilded Ochre</b><code>#B98A2F</code><span class="use">点缀。分割线、小标、hover。≤5%，禁大面积铺金</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#2E3F55"></div><div class="info"><b>靛夜 Indigo Night</b><code>#2E3F55</code><span class="use">辅助冷色。信息模块底、次级按钮，平衡暖调</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#F6F1E7;border-bottom:1px solid #DDD2BF"></div><div class="info"><b>羊毛白 Wool Cream</b><code>#F6F1E7</code><span class="use">全站底色。不用纯白——羊毛白即未染色的原料本身</span></div></div>
+    <div class="swatch"><div class="chip" style="background:#2B2118"></div><div class="info"><b>牦牛棕 Yak Umber</b><code>#2B2118</code><span class="use">正文与深底。不用纯黑，深棕来自牦牛绒本色</span></div></div>
+  </div>
+  <div class="note"><b>使用比例铁律：</b>羊毛白 70% / 牦牛棕（文字）20% / 藏红 ≤10% / 鎏金 ≤5%。深底上一律用暖白 #F2E9DA 文字，<b>禁止灰字上深底</b>；正文对比度 ≥ 7:1。</div>
+  <h3>色彩感觉的实物参照</h3>
+  <div class="figs">
+    <figure><a href="assets/22_TRC-MonkRed-PDP平铺.jpg"><img loading="lazy" src="assets/22_TRC-MonkRed-PDP平铺.jpg" alt="僧袍红"></a><figcaption><b>藏红的产品化</b>TRC「Monk Red」：僧袍红做进产品设计本身，色即文化。</figcaption></figure>
+    <figure><a href="assets/06_Tufenkian-YakSoo牦牛毛原色地毯.jpg"><img loading="lazy" src="assets/06_Tufenkian-YakSoo牦牛毛原色地毯.jpg" alt="原色"></a><figcaption><b>羊毛白/牦牛棕的来处</b>Tufenkian Yak-Soo：不染色的天然毛色本身就是卖点。</figcaption></figure>
+    <figure><a href="assets/82_JanKath-染色绒球色卡盘特写.jpg"><img loading="lazy" src="assets/82_JanKath-染色绒球色卡盘特写.jpg" alt="色卡"></a><figcaption><b>色板的讲法</b>Jan Kath 染色绒球色卡盘：把「可定制配色」拍成视觉大片。</figcaption></figure>
+    <figure><a href="assets/66_Norlha-高原草场村落大远景.jpg"><img loading="lazy" src="assets/66_Norlha-高原草场村落大远景.jpg" alt="产地色"></a><figcaption><b>品牌色板的源头</b>Norlha 高原远景：蓝天+草甸+土地色调即整套色板出处。</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section id="s3">
+  <div class="kicker">Section 03</div>
+  <h2><span class="no serif">叁</span>字体系统</h2>
+  <p class="lead">北美站全英文。衬线担当「工艺感」，无衬线担当「可读性」，一共只用两个家族。</p>
+  <div class="spec">
+    <div class="row">
+      <div class="label">Display · 标题与品牌语 — EB Garamond（Google Fonts 免费商用）</div>
+      <div class="serif" style="font-size:34px;line-height:1.3">Hand-knotted in Gyantse, Tibet.</div>
+      <div class="serif" style="font-size:16px;font-style:italic;color:var(--muted)">用于 H1/H2、金句、系列名。字重 400–600。</div>
+    </div>
+    <div class="row">
+      <div class="label">Wordmark · 品牌字标 — EB Garamond 全大写 + 0.4em 字距</div>
+      <div class="serif" style="letter-spacing:.4em;font-size:20px">ANANDALAM</div>
+      <div style="font-size:13.5px;color:var(--muted)">字标即 Logo（第一阶段不做图形符号）。最小宽 120px，四周留空 ≥ 字高 1 倍。</div>
+    </div>
+    <div class="row">
+      <div class="label">Body · 正文与 UI — Inter 或 Karla（二选一后全站锁定）</div>
+      <div style="font-size:16px">Each rug takes 60–90 days on a traditional loom. Expect natural shedding in the first weeks — it is wool being wool.</div>
+      <div style="font-size:13.5px;color:var(--muted)">正文 16–17px / 行高 1.7 / 行宽 ≤ 68ch；参数表格用 tabular-nums。</div>
+    </div>
+    <div class="row">
+      <div class="label">Eyebrow · 小标签 — 全大写 + 0.25em 字距 + 鎏金色</div>
+      <div style="font-size:12px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent-2);font-weight:700">FROM THE TRIANGLE OF ORIGIN</div>
+    </div>
+  </div>
+  <div class="note">Shopify 落地：Dawn 主题 Heading font = EB Garamond，Body font = Inter/Karla。中文场景（国内小程序）用思源宋体 + 苹方/微软雅黑，同一套色板。</div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section id="s4">
+  <div class="kicker">Section 04</div>
+  <h2><span class="no serif">肆</span>摄影风格铁律</h2>
+  <p class="lead">这一章给摄影师看。每条铁律配对标品牌实例——风格结论提炼自 6 品牌 83 条实抓素材的共性。</p>
+
+  <h3>铁律一 · 自然光优先，禁影棚彩色灯效</h3>
+  <div class="figs">
+    <figure><a href="assets/64_Norlha-手工缝制暖调特写.jpg"><img loading="lazy" src="assets/64_Norlha-手工缝制暖调特写.jpg" alt=""></a><figcaption><b>Norlha 窗光缝制</b>暖调胶片感全靠自然窗光，产品与手同框。</figcaption></figure>
+    <figure><a href="assets/52_KAL-植物染地毯PDP主图.jpg"><img loading="lazy" src="assets/52_KAL-植物染地毯PDP主图.jpg" alt=""></a><figcaption><b>KAL PDP 主图</b>自然光正俯拍平铺，就是藏毯主图的标准打法。</figcaption></figure>
+    <figure><a href="assets/27_KAL-og主视觉-高原户外织物.jpg"><img loading="lazy" src="assets/27_KAL-og主视觉-高原户外织物.jpg" alt=""></a><figcaption><b>KAL 高原直射光</b>低饱和贴近产地真实光线，主视觉级别。</figcaption></figure>
+  </div>
+
+  <h3>铁律二 · 工艺线可拍黑白——让「手艺」当主角</h3>
+  <div class="figs">
+    <figure><a href="assets/56_Norlha-首屏黑白工艺特写.jpg"><img loading="lazy" src="assets/56_Norlha-首屏黑白工艺特写.jpg" alt=""></a><figcaption><b>Norlha 首屏</b>黑白双手整理绣线——工艺过程直接当 hero。</figcaption></figure>
+    <figure><a href="assets/57_Norlha-第二屏黑白捻线特写.jpg"><img loading="lazy" src="assets/57_Norlha-第二屏黑白捻线特写.jpg" alt=""></a><figcaption><b>Norlha 捻线特写</b>浅景深+胶片颗粒，成本极低高级感极强，必抄机位。</figcaption></figure>
+    <figure><a href="assets/62_Norlha-工坊手部黑白特写.jpg"><img loading="lazy" src="assets/62_Norlha-工坊手部黑白特写.jpg" alt=""></a><figcaption><b>Norlha Atelier 页</b>黑白还能规避工坊环境杂乱的问题。</figcaption></figure>
+  </div>
+
+  <h3>铁律三 · 人要有名字——工匠肖像 + 真名</h3>
+  <div class="figs">
+    <figure><a href="assets/09_Tufenkian-工匠个人肖像Jigmey.jpg"><img loading="lazy" src="assets/09_Tufenkian-工匠个人肖像Jigmey.jpg" alt=""></a><figcaption><b>Tufenkian「Jigmey」</b>给手艺配上具体的人和名字——正是我们最缺的。</figcaption></figure>
+    <figure><a href="assets/36_PippaSmall-具名工匠肖像Javier.jpg"><img loading="lazy" src="assets/36_PippaSmall-具名工匠肖像Javier.jpg" alt=""></a><figcaption><b>Pippa Small「Javier」</b>具名工匠是道德工艺叙事的核心证据。</figcaption></figure>
+    <figure><a href="assets/68_Norlha-男织工线轴遮脸肖像.jpg"><img loading="lazy" src="assets/68_Norlha-男织工线轴遮脸肖像.jpg" alt=""></a><figcaption><b>Norlha 线轴肖像</b>人+材料同框、构图大胆，肖像系列可按此批量拍。</figcaption></figure>
+    <figure><a href="assets/69_Norlha-女匠人佛珠侧身像.jpg"><img loading="lazy" src="assets/69_Norlha-女匠人佛珠侧身像.jpg" alt=""></a><figcaption><b>Norlha 日常服饰</b>邦典配色本身就是文化符号，比民族风摆拍高级。</figcaption></figure>
+  </div>
+
+  <h3>铁律四 · 产品回产地——竞品最难抄的镜头</h3>
+  <div class="figs">
+    <figure><a href="assets/71_JanKath-地毯铺进山区草坡实拍.jpg"><img loading="lazy" src="assets/71_JanKath-地毯铺进山区草坡实拍.jpg" alt=""></a><figcaption><b>Jan Kath 山地草坡</b>把地毯带回灵感地拍——我们的西藏版就是最大差异化。</figcaption></figure>
+    <figure><a href="assets/74_JanKath-明黄地毯铺火山土.jpg"><img loading="lazy" src="assets/74_JanKath-明黄地毯铺火山土.jpg" alt=""></a><figcaption><b>Jan Kath 火山土</b>产品色彩与荒地质感对冲，一张图立住「艺术品」。</figcaption></figure>
+    <figure><a href="assets/10_Tufenkian-产地-高原牧羊人.jpg"><img loading="lazy" src="assets/10_Tufenkian-产地-高原牧羊人.jpg" alt=""></a><figcaption><b>Tufenkian 牧羊人</b>「原料第一公里」：羊/牦牛→毛→毯的源头叙事。</figcaption></figure>
+    <figure><a href="assets/67_Norlha-草原风中长辫背影抓拍.jpg"><img loading="lazy" src="assets/67_Norlha-草原风中长辫背影抓拍.jpg" alt=""></a><figcaption><b>Norlha 草原抓拍</b>不摆拍、有生命力——「社区里真实的人」。</figcaption></figure>
+  </div>
+
+  <h3>铁律五 · 微距肌理——高客单靠细节「值回票价」</h3>
+  <div class="figs">
+    <figure><a href="assets/53_KAL-纱线织纹微距.jpg"><img loading="lazy" src="assets/53_KAL-纱线织纹微距.jpg" alt=""></a><figcaption><b>KAL 纱线微距</b>手纺纱粗细不均正是卖点，要拍到看清捻度。</figcaption></figure>
+    <figure><a href="assets/04_Tufenkian-PDP-斜角微距细节.jpg"><img loading="lazy" src="assets/04_Tufenkian-PDP-斜角微距细节.jpg" alt=""></a><figcaption><b>Tufenkian 绒头细节</b>看清绒头高度和手工打结质感。</figcaption></figure>
+    <figure><a href="assets/23_TRC-MonkRed-PDP特写.jpg"><img loading="lazy" src="assets/23_TRC-MonkRed-PDP特写.jpg" alt=""></a><figcaption><b>TRC 结数特写</b>小品牌也坚持三视角，绒面肌理清晰可见。</figcaption></figure>
+    <figure><a href="assets/80_JanKath-织机金黄经线特写.jpg"><img loading="lazy" src="assets/80_JanKath-织机金黄经线特写.jpg" alt=""></a><figcaption><b>Jan Kath 经线特写</b>手+经线+色彩三要素构图，织造特写标准机位。</figcaption></figure>
+  </div>
+
+  <div class="dd">
+    <div class="col do"><h4>✓ 要这样拍</h4><ul>
+      <li>双手 + 经纬线 + 半成品同框（全部品牌的共同机位）</li>
+      <li>浅景深微距：捻度、绒头、锁边、流苏</li>
+      <li>同一单品多种用法/裹法——不加 SKU 也能出内容量</li>
+      <li>横竖双版：每个视频机位同时出 16:9 和 9:16</li>
+      <li>请一位署名纪实摄影师成套输出（KAL 模式）</li>
+    </ul></div>
+    <div class="col dont"><h4>✗ 不要这样拍</h4><ul>
+      <li>刻意「民族风」摆拍——日常服饰本身就是文化符号</li>
+      <li>宗教仪式当卖点拍（红线，见第玖章）</li>
+      <li>大红大金饱和堆砌、影楼式布光</li>
+      <li>只拍产品不拍人（重蹈「缺人」短板）</li>
+      <li>杂乱工坊全景直出——收进局部或转黑白</li>
+    </ul></div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section id="s5">
+  <div class="kicker">Section 05</div>
+  <h2><span class="no serif">伍</span>Shopify 首页规划</h2>
+  <p class="lead">九个模块自上而下，每块配参考图。红边框 = 必须靠这次赴藏拍摄产出。</p>
+
+  <div class="wire">
+    <div class="blk hot">
+      <div class="head"><b>① Hero 首屏</b><span class="desc">10–20 秒无声循环视频（织机/高原），叠一句定位语 + Shop the Collection。桌面/移动横竖双版。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><video controls preload="none" src="assets/00_Tufenkian-首页hero视频-桌面横版-720p.mp4"></video><figcaption><b>Tufenkian hero 横版</b>开屏动态影像代替静态大图。</figcaption></figure>
+        <figure><video controls preload="none" src="assets/01_Tufenkian-首页hero视频-移动竖版-720p.mp4"></video><figcaption><b>Tufenkian hero 竖版</b>移动端专用竖版——拍摄时同机位双版。</figcaption></figure>
+        <figure><video controls preload="none" src="assets/28_KAL-首页hero循环视频.mp4"></video><figcaption><b>KAL 无声循环</b>15 秒环境循环即可撑起首屏氛围。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk hot">
+      <div class="head"><b>② 产地三角条</b><span class="desc">Lhasa · Gyantse · Nyingchi 三地名+一句话+小图，点击进产地故事页——「三角壁垒」的视觉化。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/14_TRC-佛塔经幡藏地风景.jpg"><img loading="lazy" src="assets/14_TRC-佛塔经幡藏地风景.jpg" alt=""></a><figcaption><b>TRC 产地符号</b>佛塔+经幡一秒建立文化真实性（克制取景）。</figcaption></figure>
+        <figure><a href="assets/31_PippaSmall-首页产地系列横幅-哥伦比亚.jpg"><img loading="lazy" src="assets/31_PippaSmall-首页产地系列横幅-哥伦比亚.jpg" alt=""></a><figcaption><b>Pippa Small 产地分块</b>首页按产地系列分块，每块一张产地大图。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="head"><b>③ 核心系列 Gyantse Collection</b><span class="desc">Prayer Mat / Meditation Mat / Wall Tapestry / Floor Rug 四档规格卡片，平铺图统一角度统一底色。</span><span class="need">□ 棚拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/76_JanKath-ErasedHeritage平铺原图.png"><img loading="lazy" src="assets/76_JanKath-ErasedHeritage平铺原图.png" alt=""></a><figcaption><b>Jan Kath 平铺规格</b>正俯拍原图级平铺，产品图即讲设计概念。</figcaption></figure>
+        <figure><a href="assets/25_TRC-首页入口材质特写.jpg"><img loading="lazy" src="assets/25_TRC-首页入口材质特写.jpg" alt=""></a><figcaption><b>TRC 入口图</b>栏目入口用材质特写勾人点进集合页。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk hot">
+      <div class="head"><b>④ 工艺四步</b><span class="desc">羊毛→手纺→植物染→手工打结，一步一图一动词，配 60–90 天工期数字。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/10_Tufenkian-产地-高原牧羊人.jpg"><img loading="lazy" src="assets/10_Tufenkian-产地-高原牧羊人.jpg" alt=""></a><figcaption><b>步骤1 羊毛</b>高原牧人/羊群——原料第一公里。</figcaption></figure>
+        <figure><a href="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg"><img loading="lazy" src="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg" alt=""></a><figcaption><b>步骤2 手纺</b>Norlha：侧脸+纺锤+绒线一图讲完。</figcaption></figure>
+        <figure><a href="assets/45_Tufenkian-工艺-织机前双手特写.jpg"><img loading="lazy" src="assets/45_Tufenkian-工艺-织机前双手特写.jpg" alt=""></a><figcaption><b>步骤4 打结</b>Tufenkian：手+经纬线+半成品同框。</figcaption></figure>
+        <figure><a href="assets/08_Tufenkian-工艺-剪花雕绒工序.jpg"><img loading="lazy" src="assets/08_Tufenkian-工艺-剪花雕绒工序.jpg" alt=""></a><figcaption><b>加步 剪花</b>「一步一图一动词」的工序拆解模板。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk hot">
+      <div class="head"><b>⑤ 具名工匠</b><span class="desc">2–3 位江孜织工肖像+真名+一句话，链到 Our Artisans 页——补「缺人」短板的正面战场。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/15_TRC-OurPeople栏目封面.jpg"><img loading="lazy" src="assets/15_TRC-OurPeople栏目封面.jpg" alt=""></a><figcaption><b>TRC「Our People」</b>织工真人做一级导航入口，信息架构直接抄。</figcaption></figure>
+        <figure><a href="assets/36_PippaSmall-具名工匠肖像Javier.jpg"><img loading="lazy" src="assets/36_PippaSmall-具名工匠肖像Javier.jpg" alt=""></a><figcaption><b>Pippa Small 模板</b>肖像+名字+故事的工匠矩阵页。</figcaption></figure>
+        <figure><a href="assets/11_Tufenkian-藏族女工群像.jpg"><img loading="lazy" src="assets/11_Tufenkian-藏族女工群像.jpg" alt=""></a><figcaption><b>Tufenkian 群像</b>真实面孔支撑公平就业主张。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk hot">
+      <div class="head"><b>⑥ 产品回产地大图</b><span class="desc">藏毯铺在高原草甸的全幅横图——品牌最独有、竞品最难抄的画面。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/71_JanKath-地毯铺进山区草坡实拍.jpg"><img loading="lazy" src="assets/71_JanKath-地毯铺进山区草坡实拍.jpg" alt=""></a><figcaption><b>Jan Kath 山地版</b>我们要拍的就是这张的西藏版。</figcaption></figure>
+        <figure><a href="assets/72_JanKath-航拍地毯驳船运输.jpg"><img loading="lazy" src="assets/72_JanKath-航拍地毯驳船运输.jpg" alt=""></a><figcaption><b>Jan Kath 航拍</b>系列页可以像杂志专题一样戏剧化。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="head"><b>⑦ 信任与护理</b><span class="desc">VOC 预教育：掉毛/羊毛味/使用寿命三问三答 + 溯源承诺——把通病提前讲透=信任。</span><span class="need">□ 文案+图标</span></div>
+    </div>
+    <div class="blk">
+      <div class="head"><b>⑧ Journal 入口</b><span class="desc">「Travels to Tibet」拍摄手记 2–3 篇（Pippa's Journal 模式），SEO+故事双料资产。</span><span class="need">■ 赴藏拍</span></div>
+      <div class="refs figs">
+        <figure><a href="assets/40_PippaSmall-创始人日记博客配图.jpg"><img loading="lazy" src="assets/40_PippaSmall-创始人日记博客配图.jpg" alt=""></a><figcaption><b>Pippa's Journal</b>创始人日记体博客持续产出故事内容。</figcaption></figure>
+        <figure><a href="assets/18_TRC-创始人与合作社孩子合影.jpg"><img loading="lazy" src="assets/18_TRC-创始人与合作社孩子合影.jpg" alt=""></a><figcaption><b>TRC 创始人在场</b>「我认识这些织工」比任何文案有说服力。</figcaption></figure>
+      </div>
+    </div>
+    <div class="blk">
+      <div class="head"><b>⑨ Email 捕获</b><span class="desc">定制 waitlist + 新系列通知；quiet luxury 语气，不打折扣弹窗。</span><span class="need">□ 设计</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section id="s6">
+  <div class="kicker">Section 06</div>
+  <h2><span class="no serif">陆</span>PDP 产品详情页规划</h2>
+  <p class="lead">每个藏毯 SKU 标准图组＝7 张图 + 1 支视频。左文右图，棚拍与藏区拍摄共用的验收清单。</p>
+
+  <div class="tablebox"><table>
+    <tr><th style="width:46px">#</th><th style="width:150px">图</th><th>规格与拍法</th><th style="width:280px">参考图（点击看原图）</th></tr>
+    <tr><td class="center">1</td><td><b>正俯拍平铺</b></td><td>主图。全毯入画、纹样完整可读，净色底。「身份证照」</td><td><a href="assets/03_Tufenkian-PDP-正俯拍平铺.jpg"><img class="mini" loading="lazy" src="assets/03_Tufenkian-PDP-正俯拍平铺.jpg" alt=""></a><a href="assets/22_TRC-MonkRed-PDP平铺.jpg"><img class="mini" loading="lazy" src="assets/22_TRC-MonkRed-PDP平铺.jpg" alt=""></a><a href="assets/54_KAL-牦牛毛地毯净底平铺.jpg"><img class="mini" loading="lazy" src="assets/54_KAL-牦牛毛地毯净底平铺.jpg" alt=""></a></td></tr>
+    <tr><td class="center">2</td><td><b>斜角低机位</b></td><td>拍出毯子厚度与垂感，最能传达手工厚重</td><td><a href="assets/24_TRC-MonkRed-PDP斜角.jpg"><img class="mini" loading="lazy" src="assets/24_TRC-MonkRed-PDP斜角.jpg" alt=""></a></td></tr>
+    <tr><td class="center">3</td><td><b>微距细节</b></td><td>绒头/打结/锁边，能看清捻度；高客单靠这张「值回票价」</td><td><a href="assets/04_Tufenkian-PDP-斜角微距细节.jpg"><img class="mini" loading="lazy" src="assets/04_Tufenkian-PDP-斜角微距细节.jpg" alt=""></a><a href="assets/53_KAL-纱线织纹微距.jpg"><img class="mini" loading="lazy" src="assets/53_KAL-纱线织纹微距.jpg" alt=""></a><a href="assets/23_TRC-MonkRed-PDP特写.jpg"><img class="mini" loading="lazy" src="assets/23_TRC-MonkRed-PDP特写.jpg" alt=""></a></td></tr>
+    <tr><td class="center">4</td><td><b>空间场景</b></td><td>欧美现代室内实景/置景，帮买家想象进自家客厅</td><td><a href="assets/05_Tufenkian-PDP-空间场景图.jpg"><img class="mini" loading="lazy" src="assets/05_Tufenkian-PDP-空间场景图.jpg" alt=""></a><a href="assets/46_KAL-餐厅家居场景.jpg"><img class="mini" loading="lazy" src="assets/46_KAL-餐厅家居场景.jpg" alt=""></a><a href="assets/55_KAL-牦牛毛地毯室内场景.jpg"><img class="mini" loading="lazy" src="assets/55_KAL-牦牛毛地毯室内场景.jpg" alt=""></a></td></tr>
+    <tr><td class="center">5</td><td><b>工艺过程</b></td><td>这张毯子在织机上的样子（赴藏拍，尽量一款一拍）</td><td><a href="assets/49_KAL-集合页内嵌制作过程图.jpg"><img class="mini" loading="lazy" src="assets/49_KAL-集合页内嵌制作过程图.jpg" alt=""></a><a href="assets/50_KAL-羌塘背带织机织工.jpg"><img class="mini" loading="lazy" src="assets/50_KAL-羌塘背带织机织工.jpg" alt=""></a></td></tr>
+    <tr><td class="center">6</td><td><b>产地场景</b></td><td>毯子回到高原（草甸/藏式庭院），全站可复用</td><td><a href="assets/71_JanKath-地毯铺进山区草坡实拍.jpg"><img class="mini" loading="lazy" src="assets/71_JanKath-地毯铺进山区草坡实拍.jpg" alt=""></a></td></tr>
+    <tr><td class="center">7</td><td><b>尺寸/背面图</b></td><td>标尺寸示意 + 背面结底实拍（自证手工打结、无乳胶背胶——VOC 结论）</td><td><span class="cap">无现成参考，按 #1 同机位拍背面即可</span></td></tr>
+    <tr><td class="center">8</td><td><b>织造短视频</b></td><td>15–30s 竖/横双版，织机声原声；嵌 PDP 直接给购买决策加信任（KAL 把工艺视频放进商品页而非只放 about）</td><td><span class="cap">参考 KAL PDP 内嵌 Vimeo 织造视频（见飞书表「KAL-PDP内嵌织造视频」，需科学上网）</span></td></tr>
+  </table></div>
+
+  <h3>围巾/藏饰的 PDP 参考（第二阶段用）</h3>
+  <div class="figs">
+    <figure><a href="assets/60_Norlha-披肩PDP主图-极简棚拍.jpg"><img loading="lazy" src="assets/60_Norlha-披肩PDP主图-极简棚拍.jpg" alt=""></a><figcaption><b>Norlha 披肩棚拍规格</b>极简浅灰背景+佛珠点缀，靠留白和垂坠感说话——Plateau Scarf 直接套用。</figcaption></figure>
+    <figure><a href="assets/61_Norlha-披肩PDP第二机位-换裹法.jpg"><img loading="lazy" src="assets/61_Norlha-披肩PDP第二机位-换裹法.jpg" alt=""></a><figcaption><b>Norlha 多裹法</b>同一单品换裹法呈现，不加 SKU 也能出内容量。</figcaption></figure>
+    <figure><a href="assets/33_PippaSmall-护身符PDP主图微距.jpg"><img loading="lazy" src="assets/33_PippaSmall-护身符PDP主图微距.jpg" alt=""></a><figcaption><b>Pippa Small 饰品微距</b>净底微距保留手工不规则痕迹——藏银线的拍法（61% 用户疑真伪，靠微距+工匠署名破）。</figcaption></figure>
+    <figure><a href="assets/35_PippaSmall-PDP包装盒展示.jpg"><img loading="lazy" src="assets/35_PippaSmall-PDP包装盒展示.jpg" alt=""></a><figcaption><b>包装单独一张</b>高客单把包装当卖点——ANANDALAM 藏式包装（哈达/藏纸）值得专门拍。</figcaption></figure>
+  </div>
+
+  <h3>PDP 文字模块（与图组配套）</h3>
+  <ul class="plain">
+    <li><b>Provenance 溯源块</b>：Woven in Gyantse · 工匠名 · 60–90 天工期 · 材料（Highland wool, plant-dyed）。</li>
+    <li><b>Honest Wool 预教育块</b>：主动讲掉毛期、羊毛味消散、色泽变化——通病提前教育变信任（VOC 结论）。</li>
+    <li><b>护理与合规</b>：护理说明 + FTC 标签信息；Floor Rug 尺寸/用途落定后补阻燃归类。</li>
+  </ul>
+</section>
+
+<!-- ============ 07 ============ -->
+<section id="s7">
+  <div class="kicker">Section 07</div>
+  <h2><span class="no serif">柒</span>Instagram 内容矩阵</h2>
+  <p class="lead">上线前先养号：九宫格三线轮转——工艺 / 产品 / 高原。全部素材从这次拍摄一站式产出。</p>
+  <div class="tablebox"><table>
+    <tr><th style="width:180px">内容类型</th><th style="width:90px">格式</th><th>内容与钩子</th><th style="width:110px">频率</th></tr>
+    <tr class="groups"><td colspan="4">REELS · 竖版 9:16（主要增长引擎）</td></tr>
+    <tr><td>织造过程 ASMR</td><td>15–30s</td><td>织机声原声+双手特写，无配乐或极简配乐</td><td>每周 1–2</td></tr>
+    <tr><td>产品回产地</td><td>15–20s</td><td>毯子在草甸展开/挂上藏式门廊的过程镜头——独有画面</td><td>每周 1</td></tr>
+    <tr><td>工匠故事</td><td>30–60s</td><td>一位工匠·名字·一句话（字幕），Travels to Tibet 切片</td><td>每两周 1</td></tr>
+    <tr><td>60–90 天倒计时</td><td>系列</td><td>一张定制毯从图纸到完成的跟拍连载</td><td>按进度</td></tr>
+    <tr class="groups"><td colspan="4">静态帖 · 4:5（调性资产）</td></tr>
+    <tr><td>产品平铺/细节</td><td>4:5</td><td>统一羊毛白底或高原实景，配一句设计寓意</td><td>每周 1–2</td></tr>
+    <tr><td>黑白工艺</td><td>4:5</td><td>Norlha 式黑白双手系列，做成可识别栏目</td><td>每周 1</td></tr>
+    <tr><td>高原风景/静物</td><td>4:5</td><td>经幡佛塔远景、染料纱线静物</td><td>穿插</td></tr>
+    <tr class="groups"><td colspan="4">STORIES / PINTEREST</td></tr>
+    <tr><td>Stories 幕后</td><td>9:16</td><td>拍摄花絮、打包发货；Highlights：Craft / Origin / Care</td><td>日常</td></tr>
+    <tr><td>Pinterest 长图</td><td>2:3</td><td>空间场景图+「Tibetan rug in modern living room」关键词</td><td>每周 3–5 pin</td></tr>
+  </table></div>
+
+  <h3>三条内容线的视觉基准</h3>
+  <div class="figs">
+    <figure><video controls preload="none" src="assets/59_Norlha-首页品牌视频2(720p).mp4"></video><figcaption><b>视频节奏基准 — Norlha 品牌片</b>慢节奏、自然声、胶片调色——Reels 的剪辑感觉照这个来。</figcaption></figure>
+    <figure><a href="assets/47_KAL-AW2025系列lookbook.jpg"><img loading="lazy" src="assets/47_KAL-AW2025系列lookbook.jpg" alt=""></a><figcaption><b>系列专题基准 — KAL lookbook</b>当季系列统一场景成组拍，九宫格成套发。</figcaption></figure>
+    <figure><a href="assets/48_KAL-署名摄影师产地纪实.jpg"><img loading="lazy" src="assets/48_KAL-署名摄影师产地纪实.jpg" alt=""></a><figcaption><b>纪实感基准 — KAL 委托摄影</b>署名摄影师成套输出，全渠道一个 LUT。</figcaption></figure>
+  </div>
+</section>
+
+<!-- ============ 08 ============ -->
+<section id="s8">
+  <div class="kicker">Section 08</div>
+  <h2><span class="no serif">捌</span>赴藏拍摄 Shot List</h2>
+  <p class="lead">按拍摄场景分五个 Block，共 32 个镜头。★＝最高优先级（缺了网站开不了张）。表格现场打勾，参考图列点击看原图。</p>
+
+  <div class="tablebox"><table>
+    <tr><th style="width:56px">编号</th><th>镜头内容</th><th style="width:100px">景别/形式</th><th style="width:170px">用途</th><th style="width:265px">参考图</th></tr>
+    <tr class="groups"><td colspan="5">BLOCK A · 江孜织坊 — 工艺线（1–2 天，光线最好时段拍特写）</td></tr>
+    <tr><td>A1 ★</td><td>双手+经纬线+半成品同框（多机位反复拍）</td><td>特写/微距</td><td>首页④ PDP#5 Reels</td><td><a href="assets/45_Tufenkian-工艺-织机前双手特写.jpg"><img class="mini" loading="lazy" src="assets/45_Tufenkian-工艺-织机前双手特写.jpg" alt=""></a><a href="assets/80_JanKath-织机金黄经线特写.jpg"><img class="mini" loading="lazy" src="assets/80_JanKath-织机金黄经线特写.jpg" alt=""></a></td></tr>
+    <tr><td>A2 ★</td><td>织机整体+织工工作全景（杂物清场）</td><td>中景</td><td>首页① hero、工艺页</td><td><a href="assets/63_Norlha-织工木织机织蓝色面料.jpg"><img class="mini" loading="lazy" src="assets/63_Norlha-织工木织机织蓝色面料.jpg" alt=""></a><a href="assets/16_TRC-年轻织女织机纪实.jpg"><img class="mini" loading="lazy" src="assets/16_TRC-年轻织女织机纪实.jpg" alt=""></a></td></tr>
+    <tr><td>A3 ★</td><td>手纺线/纺锤旋转（老匠人侧脸入画）</td><td>特写</td><td>工艺四步「手纺」</td><td><a href="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg"><img class="mini" loading="lazy" src="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg" alt=""></a><a href="assets/57_Norlha-第二屏黑白捻线特写.jpg"><img class="mini" loading="lazy" src="assets/57_Norlha-第二屏黑白捻线特写.jpg" alt=""></a></td></tr>
+    <tr><td>A4 ★</td><td>植物染：染料静物+染缸提纱瞬间</td><td>静物+中景</td><td>工艺四步「植物染」</td><td><a href="assets/79_JanKath-染色纱线静物油画感.jpg"><img class="mini" loading="lazy" src="assets/79_JanKath-染色纱线静物油画感.jpg" alt=""></a><a href="assets/82_JanKath-染色绒球色卡盘特写.jpg"><img class="mini" loading="lazy" src="assets/82_JanKath-染色绒球色卡盘特写.jpg" alt=""></a></td></tr>
+    <tr><td>A5 ★</td><td>手工打结逐帧（微距慢动作视频）</td><td>微距/视频</td><td>工艺四步「打结」、PDP 视频</td><td><a href="assets/56_Norlha-首屏黑白工艺特写.jpg"><img class="mini" loading="lazy" src="assets/56_Norlha-首屏黑白工艺特写.jpg" alt=""></a></td></tr>
+    <tr><td>A6</td><td>剪花/修绒工序（剪刀+绒面浮雕）</td><td>特写</td><td>工艺页、Reels</td><td><a href="assets/81_JanKath-剪刀雕花工序特写.jpg"><img class="mini" loading="lazy" src="assets/81_JanKath-剪刀雕花工序特写.jpg" alt=""></a><a href="assets/08_Tufenkian-工艺-剪花雕绒工序.jpg"><img class="mini" loading="lazy" src="assets/08_Tufenkian-工艺-剪花雕绒工序.jpg" alt=""></a></td></tr>
+    <tr><td>A7</td><td>图纸/格纸设计稿+手指点图对照半成品</td><td>特写</td><td>定制页（60–90 天叙事）</td><td><a href="assets/20_TRC-手绘格纸设计图工序.jpg"><img class="mini" loading="lazy" src="assets/20_TRC-手绘格纸设计图工序.jpg" alt=""></a></td></tr>
+    <tr><td>A8</td><td>染色纱线堆/线轴色卡阵列（静物油画光）</td><td>静物</td><td>素材库、about 彩蛋</td><td><a href="assets/79_JanKath-染色纱线静物油画感.jpg"><img class="mini" loading="lazy" src="assets/79_JanKath-染色纱线静物油画感.jpg" alt=""></a></td></tr>
+    <tr><td>A9 ★</td><td>10–20s 无声循环：织机节奏（横竖双版）</td><td>视频</td><td>首页① hero 循环</td><td><span class="cap">参考本页 §伍-① 三支 hero 视频</span></td></tr>
+    <tr class="groups"><td colspan="5">BLOCK B · 具名工匠 — 人物线（穿插 A 进行，逐人登记姓名+工序）</td></tr>
+    <tr><td>B1 ★</td><td>工匠正面肖像 ×3–5 人（窗光，人+材料同框）</td><td>肖像</td><td>首页⑤、Our Artisans 页</td><td><a href="assets/09_Tufenkian-工匠个人肖像Jigmey.jpg"><img class="mini" loading="lazy" src="assets/09_Tufenkian-工匠个人肖像Jigmey.jpg" alt=""></a><a href="assets/68_Norlha-男织工线轴遮脸肖像.jpg"><img class="mini" loading="lazy" src="assets/68_Norlha-男织工线轴遮脸肖像.jpg" alt=""></a><a href="assets/69_Norlha-女匠人佛珠侧身像.jpg"><img class="mini" loading="lazy" src="assets/69_Norlha-女匠人佛珠侧身像.jpg" alt=""></a></td></tr>
+    <tr><td>B2</td><td>工匠工作状态抓拍（不摆拍，日常服饰）</td><td>纪实</td><td>Artisans 页、IG</td><td><a href="assets/19_TRC-about页社媒纪实照.jpg"><img class="mini" loading="lazy" src="assets/19_TRC-about页社媒纪实照.jpg" alt=""></a><a href="assets/50_KAL-羌塘背带织机织工.jpg"><img class="mini" loading="lazy" src="assets/50_KAL-羌塘背带织机织工.jpg" alt=""></a></td></tr>
+    <tr><td>B3 ★</td><td>每位工匠 30–60s 采访：名字/做多少年/最难的工序</td><td>视频</td><td>Reels 工匠故事、品牌片</td><td><span class="cap">节奏参考 Norlha 品牌片（§柒）</span></td></tr>
+    <tr><td>B4</td><td>创始人与工匠同框：看样、对图纸、验毯</td><td>纪实</td><td>创始人故事页</td><td><a href="assets/21_TRC-创始人手持纱线色样.jpg"><img class="mini" loading="lazy" src="assets/21_TRC-创始人手持纱线色样.jpg" alt=""></a><a href="assets/18_TRC-创始人与合作社孩子合影.jpg"><img class="mini" loading="lazy" src="assets/18_TRC-创始人与合作社孩子合影.jpg" alt=""></a></td></tr>
+    <tr><td>B5</td><td>工坊群像（女工围坐织机，环境光）</td><td>群像</td><td>about、社会责任叙事</td><td><a href="assets/11_Tufenkian-藏族女工群像.jpg"><img class="mini" loading="lazy" src="assets/11_Tufenkian-藏族女工群像.jpg" alt=""></a><a href="assets/17_TRC-车间群体劳动场景.jpg"><img class="mini" loading="lazy" src="assets/17_TRC-车间群体劳动场景.jpg" alt=""></a></td></tr>
+    <tr class="groups"><td colspan="5">BLOCK C · 产品回产地 — 独有画面线（半天–1 天，看天气抢光线，带 2–3 块成品毯）</td></tr>
+    <tr><td>C1 ★</td><td>藏毯平铺高原草甸，远山入画（横图+俯拍）</td><td>大远景/航拍</td><td>首页⑥、PDP#6、Pinterest</td><td><a href="assets/71_JanKath-地毯铺进山区草坡实拍.jpg"><img class="mini" loading="lazy" src="assets/71_JanKath-地毯铺进山区草坡实拍.jpg" alt=""></a><a href="assets/74_JanKath-明黄地毯铺火山土.jpg"><img class="mini" loading="lazy" src="assets/74_JanKath-明黄地毯铺火山土.jpg" alt=""></a></td></tr>
+    <tr><td>C2 ★</td><td>藏毯展开瞬间（两人抖开毯子的动态）</td><td>视频/连拍</td><td>Reels 产品回产地</td><td><span class="cap">动态镜头，参考 C1 构图</span></td></tr>
+    <tr><td>C3</td><td>挂毯挂上藏式门廊/白墙（用法示范）</td><td>中景</td><td>Wall Tapestry PDP</td><td><a href="assets/27_KAL-og主视觉-高原户外织物.jpg"><img class="mini" loading="lazy" src="assets/27_KAL-og主视觉-高原户外织物.jpg" alt=""></a></td></tr>
+    <tr><td>C4</td><td>Prayer/Meditation Mat 户外静坐场景（人物背影，去宗教化）</td><td>中景</td><td>冥想垫 PDP、IG</td><td><span class="cap">走「静坐/冥想」生活方式表达，见第玖章红线</span></td></tr>
+    <tr><td>C5</td><td>牦牛群/羊群+牧人远景（原料第一公里）</td><td>大远景</td><td>产地页、工艺四步「羊毛」</td><td><a href="assets/10_Tufenkian-产地-高原牧羊人.jpg"><img class="mini" loading="lazy" src="assets/10_Tufenkian-产地-高原牧羊人.jpg" alt=""></a></td></tr>
+    <tr><td>C6</td><td>经幡/佛塔/村落地标远景（克制取景）</td><td>风景</td><td>产地三角条、IG 穿插</td><td><a href="assets/14_TRC-佛塔经幡藏地风景.jpg"><img class="mini" loading="lazy" src="assets/14_TRC-佛塔经幡藏地风景.jpg" alt=""></a><a href="assets/66_Norlha-高原草场村落大远景.jpg"><img class="mini" loading="lazy" src="assets/66_Norlha-高原草场村落大远景.jpg" alt=""></a></td></tr>
+    <tr class="groups"><td colspan="5">BLOCK D · 产地三角补充 — 拉萨/林芝（顺路各半天）</td></tr>
+    <tr><td>D1</td><td>拉萨：藏饰工匠打铜/錾刻特写（藏银线预存）</td><td>特写</td><td>藏饰品线上线时用</td><td><a href="assets/38_PippaSmall-阿富汗工坊实拍.jpg"><img class="mini" loading="lazy" src="assets/38_PippaSmall-阿富汗工坊实拍.jpg" alt=""></a></td></tr>
+    <tr><td>D2</td><td>林芝：牦牛绒原料/梳绒过程（围巾线预存）</td><td>特写</td><td>Plateau Scarf PDP</td><td><a href="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg"><img class="mini" loading="lazy" src="assets/65_Norlha-老匠人纺车手纺牦牛绒.jpg" alt=""></a></td></tr>
+    <tr><td>D3</td><td>三地各拍一张「地名级」代表画面（同构图规格）</td><td>风景</td><td>首页② 产地三角条</td><td><a href="assets/32_PippaSmall-首页工匠场景横幅-约旦.jpg"><img class="mini" loading="lazy" src="assets/32_PippaSmall-首页工匠场景横幅-约旦.jpg" alt=""></a></td></tr>
+    <tr class="groups"><td colspan="5">BLOCK E · 视频统筹 — 品牌片（贯穿全程）</td></tr>
+    <tr><td>E1 ★</td><td>「Travels to Tibet」品牌纪录片素材：创始人旅程视角串联 A–D（对标 Pippa Small Travels 系列）</td><td>纪录片</td><td>品牌故事页、YouTube、投放</td><td><span class="cap">片名框架：Travels to Tibet；节奏参考 Norlha 品牌片</span></td></tr>
+    <tr><td>E2</td><td>每个关键机位横竖双版+4K（后期裁 Reels）</td><td>规范</td><td>全渠道</td><td><span class="cap">见 §伍-① Tufenkian 横竖双版</span></td></tr>
+    <tr><td>E3</td><td>环境音采集：织机声、风声、纺轮声</td><td>录音</td><td>Reels ASMR、品牌片</td><td><span class="cap">无参考图，现场收干净底噪</span></td></tr>
+  </table></div>
+
+  <div class="note"><b>行前清单：</b>① 署名纪实摄影师 1 名（KAL 模式）＋跟拍视频 1 名；② 工匠姓名/工序登记表＋肖像授权书（中英双语，网站署名要用）；③ 统一 LUT 在工坊光线下先试片；④ 带 2–3 块成品毯上高原拍 Block C；⑤ 无人机（C1 航拍）先查当地报备规定。</div>
+</section>
+
+<!-- ============ 09 ============ -->
+<section id="s9">
+  <div class="kicker">Section 09</div>
+  <h2><span class="no serif">玖</span>文化红线清单（拍摄与后期都要过）</h2>
+  <p class="lead">北美市场对文化挪用最敏感（调研结论），BP 风险表将其列为高影响项。所有素材发布前过四关：</p>
+  <ul class="plain">
+    <li><b>避免宗教性表述与仪式画面</b>：不拍法事/诵经场景当卖点；Prayer Mat 场景走「静坐/冥想」生活方式化表达（BP 应对策略原文）。</li>
+    <li><b>真实溯源可查</b>：网站出现的每位工匠都要真名实姓、真实在场；社区回馈承诺拍到可验证实景（TRC 公益页模式，参考 <a href="assets/26_TRC-公益-唇腭裂烧伤中心实地.jpg">具体机构实拍</a>、<a href="assets/12_Tufenkian-公益-资助学校实景.jpg">Tufenkian 学校实景</a>）。</li>
+    <li><b>肖像授权完备</b>：出镜工匠签中英双语授权；儿童入画需监护人同意，避免「贫困叙事」式取景。</li>
+    <li><b>牦牛绒溯源红线</b>：严禁与 shahtoosh（藏羚羊绒，CITES 禁贸）产生任何联想，素材命名统一 yak wool / yak khullu。</li>
+  </ul>
+  <footer>
+    ANANDALAM Visual Identity &amp; Shoot Plan · V2 图文版 · 2026-07-09 ·
+    配套素材：本页 assets（80 文件在线可看）+ 飞书多维表格「ANANDALAM 视觉参考素材库」（83 条含参考点注释）·
+    依据：BP V2.0 + 市场/画像/合规三份调研 + 6 品牌官网实抓素材
+  </footer>
+</section>
+
+</div>
+</body>
+</html>
